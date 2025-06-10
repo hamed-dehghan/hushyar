@@ -9,12 +9,12 @@ import { useState, useEffect } from 'react';
 import { projectsAPI } from '@/lib/api';
 import { useRouter } from 'next/navigation';
 import { useToast } from '@/hooks/use-toast';
-import { 
-  FolderOpen, 
-  Plus, 
-  Search, 
-  Calendar, 
-  DollarSign, 
+import {
+  FolderOpen,
+  Plus,
+  Search,
+  Calendar,
+  DollarSign,
   Clock,
   Filter
 } from 'lucide-react';
@@ -30,7 +30,7 @@ interface Project {
   createdAt: string;
 }
 
-const statusLabels = {
+const statusLabels: any = {
   pending: 'در انتظار بررسی',
   in_review: 'در حال بررسی',
   approved: 'تایید شده',
@@ -38,7 +38,7 @@ const statusLabels = {
   completed: 'تکمیل شده'
 };
 
-const statusColors = {
+const statusColors: any = {
   pending: 'bg-yellow-100 text-yellow-800',
   in_review: 'bg-blue-100 text-blue-800',
   approved: 'bg-green-100 text-green-800',
@@ -47,7 +47,7 @@ const statusColors = {
 };
 
 export default function ProjectsPage() {
-  const [projects, setProjects] = useState<Project[]>([]);
+  const [projects, setProjects] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('all');
@@ -76,11 +76,11 @@ export default function ProjectsPage() {
 
   const filteredProjects = projects.filter(project => {
     const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         project.industryField.toLowerCase().includes(searchTerm.toLowerCase());
-    
+      project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.industryField.toLowerCase().includes(searchTerm.toLowerCase());
+
     const matchesStatus = statusFilter === 'all' || project.status === statusFilter;
-    
+
     return matchesSearch && matchesStatus;
   });
 
@@ -165,7 +165,7 @@ export default function ProjectsPage() {
                 {searchTerm || statusFilter !== 'all' ? 'پروژه‌ای یافت نشد' : 'هنوز پروژه‌ای ثبت نکرده‌اید'}
               </h3>
               <p className="text-gray-600 mb-4">
-                {searchTerm || statusFilter !== 'all' 
+                {searchTerm || statusFilter !== 'all'
                   ? 'لطفاً کلمات کلیدی یا فیلتر را تغییر دهید'
                   : 'اولین پروژه خود را ثبت کنید و با متخصصان ما در ارتباط باشید'
                 }
@@ -180,8 +180,8 @@ export default function ProjectsPage() {
         ) : (
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {filteredProjects.map((project) => (
-              <Card 
-                key={project.id} 
+              <Card
+                key={project.id}
                 className="hover:shadow-lg transition-shadow cursor-pointer"
                 onClick={() => router.push(`/projects/${project.id}`)}
               >
@@ -198,7 +198,7 @@ export default function ProjectsPage() {
                   <p className="text-gray-700 text-sm line-clamp-3 mb-4">
                     {project.description}
                   </p>
-                  
+
                   <div className="space-y-2 text-sm text-gray-600">
                     <div className="flex items-center gap-2">
                       <DollarSign className="h-4 w-4" />
