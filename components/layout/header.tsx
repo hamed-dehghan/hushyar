@@ -3,7 +3,8 @@
 import { Button } from '@/components/ui/button';
 import { useAuthStore } from '@/lib/store/auth';
 import Link from 'next/link';
-import { Brain, LogOut, User } from 'lucide-react';
+import { LogOut, User } from 'lucide-react';
+import Image from 'next/image';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,11 +21,24 @@ export function Header() {
     <header className="border-b bg-white shadow-sm">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <Brain className="h-8 w-8 text-primary" />
+          <Image
+            src="/logo.png"
+            alt="کلینیک هوشیار"
+            width={45}
+            height={45}
+            className="h-12 w-12"
+          />
           <span className="text-xl font-bold">کلینیک هوشیار</span>
         </Link>
 
         <nav className="flex items-center gap-4">
+          <Image
+            src="/IAU.png"
+            alt="کلینیک هوشیار"
+            width={100}
+            height={45}
+            className="h-12 w-auto"
+          />
           {isAuthenticated && user ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
