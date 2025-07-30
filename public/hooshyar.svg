@@ -1,41 +1,23 @@
-'use client';
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="267.8px" height="375.9px" viewBox="0 0 267.8 375.9" style="enable-background:new 0 0 267.8 375.9;" xml:space="preserve"
+	>
 
-import { Button } from '@/components/ui/button';
-import { useAuthStore } from '@/lib/store/auth';
-import Link from 'next/link';
-import { LogOut, User } from 'lucide-react';
-import Image from 'next/image';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-
-export function Header() {
-  const { user, isAuthenticated, logout } = useAuthStore();
-
-  return (
-    <header className="border-b bg-white shadow-sm">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 267.8 375.9" className="h-14 w-auto fill-black">
-            <path fill="#000" d="M133.9,301.7c-19.5,0-39,0-58.5,0c-8.2,0-12.8-4.2-12.5-12.4c0.6-17.2-5.3-32.1-15.1-45.6c-6.8-9.4-14.2-18.4-21.2-27.6
+<path fill="#fff" d="M133.9,301.7c-19.5,0-39,0-58.5,0c-8.2,0-12.8-4.2-12.5-12.4c0.6-17.2-5.3-32.1-15.1-45.6c-6.8-9.4-14.2-18.4-21.2-27.6
 	C12,196.8,3.8,175.3,1,151.4C-1.5,128.8,0.5,106.9,9,86c17.2-42.5,48.9-69.7,92.8-81.8c25.1-6.9,50.4-5,75.1,3.6
 	c43,15.1,71.6,44.3,85.4,87.7c6.7,21,6.7,42.4,3.3,64.1c-4.4,27.9-18.5,50.7-36.3,71.8c-10.3,12.3-19.2,25.6-22.8,41.7
 	c-1.1,4.9-1.3,10.1-1.3,15.2c0,9.1-4,13.4-13.2,13.4C172.6,301.7,153.2,301.7,133.9,301.7z M133.7,290c18,0,36,0,54,0
 	c4,0,5.5-1.2,5.5-4.9c0-12.2,4-23.3,9.1-34c6.3-13.5,15.6-25,25.1-36.3c32.6-38.4,38.5-98,12.9-141.2C213.9,28.7,165.8,7.1,114.9,14
 	c-19.5,2.7-36.8,10.4-52.6,22C21.1,66.5,6,107.6,13.4,157.6c3.3,21.9,13.8,40.7,27.4,57.9c4.6,5.9,9.4,11.7,13.9,17.7
 	c11.7,15.4,19,32.4,19.9,52c0.2,3.6,1.6,4.9,5.6,4.9C98,290,115.9,290,133.7,290z"/>
-            <path fill="#000" d="M134.3,310.9c17,0,34,0,51,0c5.1,0,7.8,2.2,7.8,6.4c0,4.3-3,6.9-8,6.9c-34.1,0-68.2,0-102.3,0c-6.5,0-10-5-7.2-10
+<path fill="#fff" d="M134.3,310.9c17,0,34,0,51,0c5.1,0,7.8,2.2,7.8,6.4c0,4.3-3,6.9-8,6.9c-34.1,0-68.2,0-102.3,0c-6.5,0-10-5-7.2-10
 	c1.5-2.6,3.8-3.3,6.6-3.3C99.6,310.9,117,310.9,134.3,310.9z"/>
-            <path fill="#000" d="M134.3,333.5c15.7,0,31.5,0,47.2,0c5.3,0,8.2,2.3,8.4,6.4c0.1,3.9-3.2,6.7-8.3,6.7c-19.7,0-39.5,0-59.2,0
+<path fill="#fff" d="M134.3,333.5c15.7,0,31.5,0,47.2,0c5.3,0,8.2,2.3,8.4,6.4c0.1,3.9-3.2,6.7-8.3,6.7c-19.7,0-39.5,0-59.2,0
 	c-11.6,0-23.2,0-34.8-0.1c-1.9,0-4-0.5-5.7-1.4c-2.6-1.5-3.6-4.1-2.7-7.1c0.9-3.2,3.2-4.6,6.4-4.6
 	C101.8,333.5,118.1,333.5,134.3,333.5z"/>
-            <path fill="#000" d="M93.4,355.4c27.1,0,53.3,0,80.3,0c-7.8,11.9-18.8,17.7-31.9,19.8C122.2,378.3,106.5,371.1,93.4,355.4z" />
-            <path fill="#000" d="M134.5,119.2c2.3-0.1,4.2-0.3,6-0.3c2.6,0,3.4-1.3,3.3-3.8c-0.1-7.4,0.1-14.8-0.1-22.1c-0.2-6.2,2.4-10.8,6.9-14.6
+<path fill="#fff" d="M93.4,355.4c27.1,0,53.3,0,80.3,0c-7.8,11.9-18.8,17.7-31.9,19.8C122.2,378.3,106.5,371.1,93.4,355.4z"/>
+<path fill="#fff" d="M134.5,119.2c2.3-0.1,4.2-0.3,6-0.3c2.6,0,3.4-1.3,3.3-3.8c-0.1-7.4,0.1-14.8-0.1-22.1c-0.2-6.2,2.4-10.8,6.9-14.6
 	c1.6-1.3,3.4-2.6,5-4c3.4-3,3.4-6-0.1-8.7c-6-4.6-7.6-13.2-3.7-19.5c3.9-6.4,11.6-8.7,18.3-5.4c6.6,3.3,10.1,11.6,7,18.5
 	c-1.2,2.7-3.9,4.7-5.9,7c-0.9,1-2.3,1.9-2.5,2.9c-0.7,6.5-4.3,11.2-9.4,14.6c-4.2,2.8-5.6,6.3-5.4,11.3c0.4,7.4,0.2,14.7,0.1,22.1
 	c0,2.1,0.4,3.3,2.8,3.3c2.6,0,5.2,0.6,7.8,0.4c5.9-0.4,8.7-3.9,8.2-9.7c-0.1-1.2-0.3-2.5-0.5-3.7c-1.2-9.1,2.6-16,9.8-21.2
@@ -72,69 +54,10 @@ export function Header() {
 	c0.1,2.9,2.6,5.3,5.6,5.3c3.3,0,5.3-2,5.4-5.3C204.8,197,202.9,195,199.3,195z M227.1,158.1c0-3.1-2.4-5.6-5.3-5.6
 	c-2.9,0-5.5,2.6-5.5,5.5c0,3.2,2.7,6,5.6,5.9C224.7,163.9,227.1,161.2,227.1,158.1z M167.2,228.1c0-3.4-1.7-5.1-4.9-5.1
 	c-3.8,0-6.1,2.1-6.1,5.5c0,3,2.4,5.3,5.5,5.3C164.9,233.8,167.2,231.4,167.2,228.1z"/>
-            <path fill="#000" d="M170.4,150.2c-3.1,0-6.3-0.2-9.4,0.1c-2.5,0.2-5.1,0.8-7.5,1.6c-3.4,1.2-7,0.3-9-2.6c-1.5-2.2-1.2-7.5,0.6-9.6
+<path fill="#fff" d="M170.4,150.2c-3.1,0-6.3-0.2-9.4,0.1c-2.5,0.2-5.1,0.8-7.5,1.6c-3.4,1.2-7,0.3-9-2.6c-1.5-2.2-1.2-7.5,0.6-9.6
 	c2-2.3,5.9-2.4,9-1.1c3.1,1.3,6.5,2.3,9.9,2.5c6.1,0.3,12.2-0.1,18.3-0.3c4.4-0.1,5.6-1.5,5.6-6c0-3.4-0.1-6.7,0-10.1
 	c0.2-11,4.9-16.1,15.7-16.7c3.1-0.2,4.8-1,6.4-3.8c2.8-5.1,9.6-7.5,15.3-6.1c5.4,1.3,10.2,7.2,10.4,12.8c0.3,6.5-3,11.8-8.6,14
 	c-6.4,2.5-12.8,1.3-16.4-4c-2.2-3.1-4.5-4-8.1-3.8c-3.7,0.2-5.1,2-5.2,5.4c0,3.9,0,7.7,0,11.6c0,9.6-6.3,15.9-15.9,16.1
 	C177.9,150.3,174.2,150.2,170.4,150.2C170.4,150.2,170.4,150.2,170.4,150.2z M227.4,111.8c0-3-2.8-5.8-5.7-5.8
 	c-2.9,0.1-5.4,2.7-5.4,5.5c0,3,2.7,5.8,5.7,5.8C224.8,117.3,227.4,114.7,227.4,111.8z"/>
-          </svg>
-
-          <span className="text-xl font-bold">کلینیک هوشیار</span>
-        </Link>
-
-        <nav className="flex items-center gap-4">
-          {isAuthenticated && user ? (
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-                  <Avatar className="h-8 w-8">
-                    <AvatarImage src={user.profilePictureUrl} alt={user.fullName} />
-                    <AvatarFallback>
-                      {user.fullName.charAt(0)}
-                    </AvatarFallback>
-                  </Avatar>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56" align="end" forceMount>
-                <div className="flex flex-col space-y-1 p-2">
-                  <p className="text-sm font-medium leading-none">{user.fullName}</p>
-                  <p className="text-xs leading-none text-muted-foreground">
-                    {user.email}
-                  </p>
-                </div>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem asChild>
-                  <Link href="/dashboard">
-                    <User className="mr-2 h-4 w-4" />
-                    <span>داشبورد</span>
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/profile">
-                    <User className="mr-2 h-4 w-4" />
-                    <span>پروفایل</span>
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={logout}>
-                  <LogOut className="mr-2 h-4 w-4" />
-                  <span>خروج</span>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          ) : (
-            <div className="flex items-center gap-2">
-              <Button variant="ghost" asChild>
-                <Link href="/auth/login">ورود</Link>
-              </Button>
-              <Button asChild>
-                <Link href="/auth/signup">ثبت‌نام</Link>
-              </Button>
-            </div>
-          )}
-        </nav>
-      </div>
-    </header>
-  );
-}
+</svg>
